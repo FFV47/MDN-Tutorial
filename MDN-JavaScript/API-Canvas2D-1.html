@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+		<title>Canvas API</title>
+	</head>
+	<body>
+		<canvas class="myCanvas">
+			<p>Add suitable fallback here.</p>
+		</canvas>
+
+		<script>
+			/** @type {HTMLCanvasElement} */
+			const canvas = document.querySelector(".myCanvas");
+			const ctx = canvas.getContext("2d");
+			const width = (canvas.width = window.innerWidth);
+			const height = (canvas.height = window.innerHeight);
+
+			window.onresize = () => {
+				const width = (canvas.width = window.innerWidth);
+				const height = (canvas.height = window.innerHeight);
+			};
+
+			// Filled Rectangles
+			ctx.fillStyle = "rgb(0, 0, 0)";
+			ctx.fillRect(0, 0, width, height);
+
+			ctx.fillStyle = "rgb(255, 0, 0)";
+			ctx.fillRect(50, 50, 100, 150);
+
+			ctx.fillStyle = "rgb(0, 255, 0)";
+			ctx.fillRect(75, 75, 100, 100);
+
+			ctx.fillStyle = "rgba(255, 0, 255, 0.7)";
+			ctx.fillRect(25, 100, 175, 50);
+
+			// Outlines Rectangles
+
+			ctx.strokeStyle = "rgb(255, 255, 255)";
+			// lineWidth defaults to 1 = (1px)
+			ctx.lineWidth = 3;
+			ctx.strokeRect(15, 25, 200, 200);
+		</script>
+	</body>
+</html>

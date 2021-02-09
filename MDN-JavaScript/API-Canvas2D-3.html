@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+		<title>Canvas API</title>
+	</head>
+	<body>
+		<canvas class="myCanvas">
+			<p>Add suitable fallback here.</p>
+		</canvas>
+
+		<script>
+			/** @type {HTMLCanvasElement} */
+			const canvas = document.querySelector(".myCanvas");
+			const ctx = canvas.getContext("2d");
+			const pi = Math.PI;
+			const width = (canvas.width = window.innerWidth);
+			const height = (canvas.height = window.innerHeight);
+
+			window.onresize = () => {
+				const width = (canvas.width = window.innerWidth);
+				const height = (canvas.height = window.innerHeight);
+			};
+
+			function degToRad(degrees) {
+				return (degrees * Math.PI) / 180;
+			}
+
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(0, 0, width, height);
+
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 1.5;
+			ctx.font = "36px arial";
+			ctx.strokeText("Canvas text 1", 150, 50);
+
+			ctx.fillStyle = "red";
+			ctx.font = "48px georgia";
+			ctx.fillText("Canvas text 2", 50, 150);
+
+			let image = new Image();
+			image.src = "images/dinosaur.png";
+
+			image.onload = () => {
+				ctx.drawImage(image, 300, 300);
+
+				ctx.drawImage(image, 20, 20, 185, 175, 300, 600, 185, 175);
+			};
+		</script>
+	</body>
+</html>

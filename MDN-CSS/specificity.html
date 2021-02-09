@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="specificity.css">
+	<title>Specificity</title>
+</head>
+
+<body>
+	<div id="outer" class="container">
+		<div id="inner" class="container">
+			<ul>
+				<li class="nav"><a href="#">One</a></li>
+				<li class="nav"><a href="#">Two</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<p class="better">This is a paragraph.</p>
+	<p class="better" id="winning">One selector to rule them all!</p>
+	<p id="winning">One selector to rule them all!</p>
+</body>
+
+</html>

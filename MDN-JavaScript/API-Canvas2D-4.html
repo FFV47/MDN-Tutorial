@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+		<title>Canvas API</title>
+	</head>
+	<body>
+		<canvas class="myCanvas">
+			<p>Add suitable fallback here.</p>
+		</canvas>
+
+		<script>
+			/** @type {HTMLCanvasElement} */
+			const canvas = document.querySelector(".myCanvas");
+			const ctx = canvas.getContext("2d");
+			const pi = Math.PI;
+			const width = (canvas.width = window.innerWidth);
+			const height = (canvas.height = window.innerHeight);
+
+			window.onresize = () => {
+				const width = (canvas.width = window.innerWidth);
+				const height = (canvas.height = window.innerHeight);
+			};
+
+			function degToRad(degrees) {
+				return (degrees * Math.PI) / 180;
+			}
+
+			function randi(min, max) {
+				return Math.floor(Math.random() * (max - min)) + min;
+			}
+
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(0, 0, width, height);
+
+			// This causes the coordinate origin (0, 0) to be moved to the center of
+			// the canvas, rather than being at the top left corner.
+			ctx.translate(width / 2, height / 2);
+
+			function spiral() {
+				let moveOffset = 20;
+				let sideLength = 250;
+
+				for (let i = 0; i < sideLength; i++) {
+					ctx.fillStyle =
+						"rgba(" + (255 - sideLength) + ", 0, " + (255 - sideLength) + ", 0.9)";
+					ctx.beginPath();
+					ctx.moveTo(moveOffset, moveOffset);
+					ctx.lineTo(moveOffset + sideLength, moveOffset);
+					let triHeight = (sideLength / 2) * Math.tan(degToRad(60));
+					ctx.lineTo(moveOffset + sideLength / 2, moveOffset + triHeight);
+					ctx.lineTo(moveOffset, moveOffset);
+					ctx.fill();
+
+					sideLength--;
+					moveOffset += 0.7;
+					ctx.rotate(degToRad(15));
+				}
+			}
+			// spiral();
+
+			function Abstract() {
+				let moveOffset = 20;
+				let size = 250;
+
+				ctx.fillStyle = "#000000";
+				ctx.fillRect(0, 0, width, height);
+
+				for (let i = 0; i < size; i++) {
+					let sideLength = randi(0, size);
+					ctx.fillStyle =
+						"rgba(" + (255 - sideLength) + ", 0, " + (255 - sideLength) + ", 0.9)";
+					ctx.beginPath();
+					ctx.moveTo(moveOffset, moveOffset);
+					ctx.lineTo(moveOffset + sideLength, moveOffset);
+					let triHeight = (sideLength / 2) * Math.tan(degToRad(60));
+					ctx.lineTo(moveOffset + sideLength / 2, moveOffset + triHeight);
+					ctx.lineTo(moveOffset, moveOffset);
+					ctx.fill();
+
+					sideLength--;
+					moveOffset += 0.7;
+					ctx.rotate(degToRad(5));
+				}
+
+				requestAnimationFrame(Abstract);
+			}
+
+			// Abstract();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+.black-bg-zillaslab
+{
+	width: fit-content;
+	padding-left: 3pc;
+	padding-right: 5px;
+	font-family: 'Zilla Slab', serif;
+	font-weight: 500;
+	font-size: 20pt;
+	color: white;
+	background-color: #3f3f3f;
+	text-shadow: 2px 2px 2px black;
+}
+.center-text
+{
+	width: fit-content;
+	margin: auto auto;
+}
+html
+{
+	color: white;
+	background-color: #1E1E3F;
+	text-shadow: 1px 1px 0px black;
+}
+body
+{
+	margin: auto;
+	background-color: #1E1E3F;
+	font-family: 'Inter', sans-serif;
+	font-size: 14pt;
+	padding: 0 120px 30px 120px;
+}
+h1
+{
+	margin: 0;
+	font-family: 'Audiowide';
+	text-align: center;
+	font-size: 60pt;
+	text-shadow: 5px 5px 4px black;
+}
+p
+{
+	font-family: 'Hind Siliguri';
+	font-size: 16pt;
+	max-width: 70ex;
+	text-align: justify;
+}
+button
+{
+	display: block;
+	margin: 0 auto;
+	font-family: 'Zilla Slab';
+	font-weight: 500;
+	font-size: 16pt;
+	padding: 5px;
+}
+img
+{
+	display: block;
+	margin: 0 auto;
+}

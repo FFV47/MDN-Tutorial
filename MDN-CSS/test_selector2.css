@@ -1,0 +1,19 @@
+.alert {
+	border: 1px grey solid;
+}
+
+.alert.stop {
+	background-color: red;
+}
+
+.alert.go {
+	background-color: green;
+}
+
+#special {
+	background-color: yellow;
+}
+
+h1+p {
+	background-color: aqua;
+}

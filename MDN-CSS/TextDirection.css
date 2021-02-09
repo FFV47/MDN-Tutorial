@@ -1,0 +1,14 @@
+.box {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 10px;
+  inline-size: 150px;
+}
+
+.horizontal {
+  writing-mode: horizontal-tb;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+}

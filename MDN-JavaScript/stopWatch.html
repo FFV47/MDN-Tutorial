@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<title>Simple setInterval clock</title>
+		<style>
+			p {
+				font-family: sans-serif;
+				clear: both;
+			}
+			button {
+				float: left;
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="start">Start</button>
+		<button class="stop">Stop</button>
+		<button class="reset">Reset</button>
+		<p class="clock"></p>
+		<script>
+			const start = document.querySelector(".start");
+			const stop = document.querySelector(".stop");
+			const reset = document.querySelector(".reset");
+			stop.disabled = true;
+			reset.disabled = true;
+			let createClock;
+			let time = 0;
+			document.querySelector(".clock").textContent = "Time: 00:00:00";
+
+			function pad(n, z, s) {
+				var z = z || 2,
+					s = s || "0";
+				return (n + "").length <= z
+					? ["", "-"][+(n < 0)] + (s.repeat(z) + Math.abs(n)).slice(-1 * z)
+					: n + "";
+			}
+
+			function displayTime() {
+				time++;
+				hour = ~~(time / 3600);
+				minute = ~~((time % 3600) / 60);
+				second = time % 60;
+				document.querySelector(".clock").textContent = `Time: ${pad(hour, 2)}:${pad(
+					minute,
+					2
+				)}:${pad(second, 2)}`;
+			}
+
+			start.onclick = () => {
+				createClock = setInterval(displayTime, 1000);
+				start.disabled = true;
+				stop.disabled = false;
+				reset.disabled = false;
+			};
+
+			stop.onclick = () => {
+				clearInterval(createClock);
+				start.disabled = false;
+				stop.disabled = true;
+			};
+
+			reset.onclick = () => {
+				time = 0;
+				clearInterval(createClock);
+				document.querySelector(".clock").textContent = "Time: 00:00:00";
+				start.disabled = false;
+				reset.disabled = true;
+			};
+		</script>
+	</body>
+</html>

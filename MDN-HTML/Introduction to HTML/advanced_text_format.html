@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ADVANCED TEXT FORMATTING</title>
+	<!-- <link rel="stylesheet" href="styles/style.css"> -->
+</head>
+
+<body>
+	<h1>ADVANCED TEXT FORMATTING</h1>
+
+	<h2>Description Lists</h2>
+	<dl>
+		<dt><strong>Bacon</strong></dt>
+		<dd>The glue that binds the world together</dd>
+		<dt><strong>Eggs</strong></dt>
+		<dd>The glue that binds the cake together</dd>
+		<dt><strong>Coffee</strong></dt>
+		<dd>The drink that gets the world running in the morning</dd>
+		<dd>A light brown color</dd>
+	</dl>
+
+	<h2>Quotation</h2>
+
+	<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+		<p>The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or <em>HTML Block Quotation Element</em>) indicates that the enclosed text is an extended quotation.</p>
+	</blockquote>
+
+	<p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended for short quotations that don't require paragraph breaks.</q></p>
+
+	<p><strong>attribute by itself dont do anything, you must create a script or attach a link to it to represent something</strong></p>
+
+	<p>According to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+			<cite>MDN blockquote page</cite></a>:
+	</p>
+
+	<p>The quote element — <code>&lt;q&gt;</code> — is <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">intended for short quotations that don't require paragraph breaks.</q> -- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"><cite>MDN q page</cite></a>.</p>
+
+	<h2>Abbreviations</h2>
+
+	<p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents</p>
+
+	<h2>Contacts</h2>
+
+	<address>
+		<p>Fernando Flores, Juiz de Fora, Minas Gerais, Brasil</p>
+	</address>
+
+	<address>
+		Fernando Flores<br>
+		Juiz de Fora<br>
+		Minas Gerais <br>
+		Brasil
+
+		<ul>
+			<li>Cel: 99154-0670</li>
+			<li>Email: <a href="mailto:ffvillaca07@gmail.com">ffvillaca07@gmail.com</a></li>
+		</ul>
+	</address>
+
+	<h2>Superscript and Subscript</h2>
+
+	<p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+	<p>Caffeine's chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.</p>
+	<p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+	<h2>Computer Code</h2>
+
+	<pre><code>var para = document.querySelector('p');
+
+	para.onclick = function() {
+	  alert('Owww, stop poking me!');
+	}</code></pre>
+
+	<p>You shouldn't use presentational elements like <code>&lt;font&gt;</code> and <code>&lt;center&gt;</code>.</p>
+
+	<p>In the above JavaScript example, <var>para</var> represents a paragraph element.</p>
+
+
+	<p>Select all the text with <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+	<pre>$ <kbd>ping mozilla.org</kbd>
+	<samp>PING mozilla.org (63.245.215.20): 56 data bytes
+	64 bytes from 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+
+	<h2>Times and Dates</h2>
+
+	<!-- Standard simple date -->
+	<time datetime="2016-01-20">20 January 2016</time> <br>
+	<!-- Just year and month -->
+	<time datetime="2016-01">January 2016</time> <br>
+	<!-- Just month and day -->
+	<time datetime="01-20">20 January</time> <br>
+	<!-- Just time, hours and minutes -->
+	<time datetime="19:30">19:30</time> <br>
+	<!-- You can do seconds and milliseconds too! -->
+	<time datetime="19:30:01.856">19:30:01.856</time> <br>
+	<!-- Date and time -->
+	<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time> <br>
+	<!-- Date and time with timezone offset-->
+	<time datetime="2016-01-20T19:30+01:00">7.30pm, 20 January 2016 is 8.30pm in France</time> <br>
+	<!-- Calling out a specific week number-->
+	<time datetime="2016-W04">The fourth week of 2016</time>
+</body>
+
+</html>

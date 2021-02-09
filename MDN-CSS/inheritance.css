@@ -1,0 +1,30 @@
+body {
+	color: green;
+	font-size: large;
+}
+
+a {
+	color: red;
+}
+
+.my-class-1 a {
+	color: inherit;
+}
+
+.my-class-2 a {
+	color: initial;
+}
+
+.my-class-3 a {
+	color: unset;
+}
+
+blockquote {
+	background-color: red;
+	border: 2px solid black;
+	padding: 10px;
+}
+
+.fix {
+	all: unset;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+		<title>Canvas API</title>
+	</head>
+	<body>
+		<canvas class="myCanvas">
+			<p>Add suitable fallback here.</p>
+		</canvas>
+
+		<script>
+			/** @type {HTMLCanvasElement} */
+			const canvas = document.querySelector(".myCanvas");
+			const ctx = canvas.getContext("2d");
+			const pi = Math.PI;
+			const width = (canvas.width = window.innerWidth);
+			const height = (canvas.height = window.innerHeight);
+
+			window.onresize = () => {
+				const width = (canvas.width = window.innerWidth);
+				const height = (canvas.height = window.innerHeight);
+			};
+
+			function degToRad(degrees) {
+				return (degrees * Math.PI) / 180;
+			}
+
+			ctx.fillStyle = "#000000";
+			ctx.fillRect(0, 0, width, height);
+
+			// beginPath defaults to (0,0)
+			ctx.strokeStyle = "#f4623d";
+			ctx.lineWidth = 3;
+			ctx.beginPath();
+			ctx.arc(300, 300, 20, 0, pi / 2, true);
+			ctx.stroke();
+
+			ctx.strokeStyle = "rgb(255, 0, 0)";
+			ctx.lineWidth = 3;
+			ctx.beginPath();
+			ctx.moveTo(50, 50);
+			ctx.lineTo(150, 50);
+			let triHeight = 50 * Math.tan(pi / 3);
+			ctx.lineTo(100, 50 + triHeight);
+			ctx.lineTo(50, 50);
+			ctx.stroke();
+			ctx.closePath();
+
+			ctx.strokeStyle = "rgb(0, 255, 0)";
+			ctx.lineWidth = 3;
+			ctx.beginPath();
+			ctx.moveTo(200, 100);
+			ctx.lineTo(300, 100);
+			ctx.lineTo(250, 100 - triHeight);
+			ctx.lineTo(200, 100);
+			ctx.stroke();
+
+			ctx.fillStyle = "rgb(0, 0, 255)";
+			ctx.beginPath();
+			ctx.arc(400, 106, 50, degToRad(0), degToRad(360), false);
+			ctx.fill();
+
+			ctx.fillStyle = "yellow";
+			ctx.beginPath();
+			ctx.arc(600, 106, 50, -pi / 4, pi / 4, true);
+			ctx.lineTo(600, 106);
+			ctx.fill();
+		</script>
+	</body>
+</html>

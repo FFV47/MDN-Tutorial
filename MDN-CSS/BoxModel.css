@@ -1,0 +1,56 @@
+p,
+ul {
+  border: 2px solid rebeccapurple;
+  padding: 0.5em;
+}
+
+.block,
+li {
+  display: block;
+  border: 2px solid blue;
+  padding: 0.5em;
+}
+
+ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+span {
+  border: 2px solid red;
+  padding: 20px 50px 20px 50px;
+  /* margin: 50px; */
+}
+
+.inline {
+  display: inline;
+}
+
+.test {
+  /* box-sizing: border-box; */
+  border-width: 10px;
+  border-style: dotted;
+  background-color: chocolate;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+}
+
+.container {
+  border: 3px solid rebeccapurple;
+  box-shadow: 3px 3px 3px #000;
+  padding: 10px;
+}
+
+.inline-flex {
+  margin: 5px;
+  display: inline-flex;
+  padding: 20px;
+  border: 3px solid lime;
+}
+
+.inline-block {
+  margin: 5px;
+  display: inline-block;
+  border: 3px solid orange;
+}

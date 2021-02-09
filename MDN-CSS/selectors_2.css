@@ -1,0 +1,47 @@
+/* Presence and values selectors */
+
+li[class] {
+	font-size: 200%;
+}
+
+/* valor exato */
+
+li[class="a"] {
+	background-color: yellow;
+}
+
+/* elemento possua alguma classe 'a' */
+
+li[class~="a"] {
+	color: red;
+}
+
+/* Substring matching selectors */
+
+/* nome da classe comece com 'a' */
+
+li[class^="a"] {
+	font-size: 200%;
+}
+
+/* nome da classe termine com 'a' */
+
+li[class$="a"] {
+	background-color: yellow;
+}
+
+/* classe possua a letra 'a' */
+
+li[class*="a"] {
+	color: red;
+}
+
+/* Case-sensitivity */
+
+li[class^="a"] {
+	background-color: yellow;
+}
+
+li[class^="a" i] {
+	color: red;
+}

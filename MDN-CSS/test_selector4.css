@@ -1,0 +1,8 @@
+h2+p {
+	color: red;
+}
+
+ul[class='list']>li {
+	border-bottom: 1px grey solid;
+	list-style-type: none;
+}

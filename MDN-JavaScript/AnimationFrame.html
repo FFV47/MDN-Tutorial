@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			html {
+				background-color: white;
+				height: 100%;
+			}
+
+			body {
+				height: inherit;
+				background-color: red;
+				margin: 0;
+				display: flex;
+				/* justify-content: center; */
+				/* align-items: center; */
+			}
+
+			div {
+				margin: auto;
+				display: inline-block;
+				font-size: 10rem;
+			}
+		</style>
+		<title>requestAnimationFrame</title>
+	</head>
+	<body>
+		<div>↻</div>
+		<script>
+			const spinner = document.querySelector("div");
+			const bodyBtn = document.querySelector("body");
+			let rotateCount = 0;
+			let startTime = null;
+			let rAF;
+
+			function draw(timestamp) {
+				if (!startTime) {
+					startTime = timestamp;
+				}
+
+				rotateCount = (timestamp - startTime) / 4;
+
+				if (rotateCount > 359) {
+					rotateCount %= 360;
+				}
+
+				spinner.style.transform = `rotate(${rotateCount}deg)`;
+
+				rAF = requestAnimationFrame(draw);
+			}
+
+			bodyBtn.onclick = () => {
+				if (rAF === 0) {
+					draw();
+				} else {
+					cancelAnimationFrame(rAF);
+					rAF = 0;
+				}
+			};
+
+			draw();
+		</script>
+	</body>
+</html>

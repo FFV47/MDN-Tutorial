@@ -1,0 +1,58 @@
+/* General styles */
+
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+ul,
+ol,
+dl,
+p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+/* li,
+p {
+  line-height: 1.5;
+} */
+
+/* Description list styles */
+
+dd,
+dt {
+  line-height: 1.5;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 1.5rem;
+}
+
+/* List specific styles */
+
+ol {
+  list-style-type: upper-roman;
+  list-style-position: outside;
+}
+
+ul {
+  padding-left: 2rem;
+  list-style-type: none;
+}
+
+/* Use image as bullets */
+ul li {
+  padding-left: 2rem;
+  background-image: url(images/star-alt-icon.png);
+  background-size: 1.7rem;
+  background-repeat: no-repeat;
+}
