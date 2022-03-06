@@ -1,11 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"files.autoSave": "afterDelay",
-		"workbench.colorTheme": "Monokai Pro",
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
 }
