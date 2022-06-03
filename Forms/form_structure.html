@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to structure a web form</title>
+  </head>
+  <body>
+    <h1>How to structure a web form</h1>
+    <p>
+      The use case in this example is one of the most important. Each time you have a set
+      of radio buttons, you should nest them inside a fieldset element. There are other
+      use cases, and in general the fieldset element can also be used to section a form.
+      Ideally, long forms should be spread across multiple pages, but if a form is getting
+      long and must be on a single page, putting the different related sections inside
+      different fieldsets improves usability.
+    </p>
+    <form>
+      <fieldset>
+        <legend>Fruit juice size</legend>
+        <p>
+          <input type="radio" name="size" id="size_1" value="small" />
+          <label for="size_1">Small</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_2" value="medium" />
+          <label for="size_2">Medium</label>
+        </p>
+        <p>
+          <input type="radio" name="size" id="size_3" value="large" />
+          <label for="size_3">Large</label>
+        </p>
+      </fieldset>
+    </form>
+
+    <form>
+      <fieldset>
+        <legend>Checkboxes</legend>
+
+        <p>
+          <input type="checkbox" id="taste_1" name="taste_cherry" value="cherry" />
+          <label for="taste_1">I like cherry</label>
+        </p>
+        <p>
+          <input type="checkbox" id="taste_2" name="taste_banana" value="banana" />
+          <label for="taste_2">I like banana</label>
+        </p>
+      </fieldset>
+
+      <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+
+      <!-- So this: -->
+      <!--div>
+        <label for="username">Name:</label>
+        <input id="username" type="text" name="username">
+        <label for="username"><abbr title="required" aria-label="required">*</abbr></label>
+      </div-->
+
+      <!-- would be better done like this: -->
+      <!--div>
+        <label for="username">
+          <span>Name:</span>
+          <input id="username" type="text" name="username">
+          <abbr title="required" aria-label="required">*</abbr>
+        </label>
+      </div-->
+
+      <!-- But this is probably best: -->
+      <div>
+        <label for="username"
+          >Name: <abbr title="required" aria-label="required">*</abbr></label
+        >
+        <input id="username" type="text" name="username" />
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+    initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="native_form_controls.css" />
+    <title>Native Form Controls</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Choose all the vegetables you like to eat</legend>
+        <ul>
+          <li>
+            <input
+              type="checkbox"
+              id="carrots"
+              name="vegetable"
+              value="carrots"
+              checked
+            />
+            <label for="carrots">Carrots</label>
+          </li>
+          <li>
+            <input type="checkbox" id="peas" name="vegetable" value="peas" />
+            <label for="peas">Peas</label>
+          </li>
+          <li>
+            <input type="checkbox" id="cabbage" name="vegetable" value="cabbage" />
+            <label for="cabbage">Cabbage</label>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>What is your favorite meal?</legend>
+        <ul>
+          <li>
+            <label for="soup">Soup</label>
+            <input type="radio" id="soup" name="meal" value="soup" checked />
+          </li>
+          <li>
+            <label for="curry">Curry</label>
+            <input type="radio" id="curry" name="meal" value="curry" />
+          </li>
+          <li>
+            <label for="pizza">Pizza</label>
+            <input type="radio" id="pizza" name="meal" value="pizza" />
+          </li>
+        </ul>
+      </fieldset>
+      <input type="image" alt="Click me!" src="my-img.png" width="80" height="30" />
+    </form>
+    <form>
+      <p>
+        <input type="file" name="file" id="file" accept="image/*" multiple />
+      </p>
+      <p>
+        <input type="file" accept="image/*;capture=camera" />
+      </p>
+      <p>
+        <input type="file" accept="video/*;capture=camcorder" />
+      </p>
+      <p>
+        <input type="file" accept="audio/*;capture=microphone" />
+      </p>
+
+      <p>
+        <button type="submit">This a <br /><strong>submit button</strong></button>
+      </p>
+      <p>
+        <input type="submit" value="This is a submit button" />
+      </p>
+      <p>
+        <button type="reset">This a <br /><strong>reset button</strong></button>
+      </p>
+      <p>
+        <input type="reset" value="This is a reset button" />
+      </p>
+      <p>
+        <button type="button">This an <br /><strong>anonymous button</strong></button>
+      </p>
+      <p>
+        <input type="button" value="This is an anonymous button" />
+      </p>
+    </form>
+  </body>
+</html>

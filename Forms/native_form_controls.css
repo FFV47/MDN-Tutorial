@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+/* Flexbox fu to make the control and label line up */
+
+li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+li label {
+  margin-left: 10px;
+}
+
+/*
+  remove the default styling of the checkbox using appearance
+  and create the outer toggle area
+*/
+input[type="checkbox"] {
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: 2px solid black;
+  background: rgb(249, 138, 138);
+  /* transition: all 0.4s; */
+}
+
+/*
+  style the ::before content to look like
+  the inner toggle switch - the bit that moves
+*/
+
+input[type="checkbox"]::before {
+  width: 16px;
+  height: 16px;
+  border-radius: 9px;
+  background-color: black;
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  transition: all 0.4s;
+}
+/*
+  change the outer background color and move the inner toggle switch
+  when the checkbox is checked; use transitions for smooth animation
+*/
+
+input[type="checkbox"]:checked {
+  background-color: #29a525;
+  transition-property: background-color;
+  transition-duration: 0.4s;
+}
+
+input[type="checkbox"]:checked::before {
+  left: 28px;
+  transition-property: left;
+  transition-duration: 0.4s;
+}

@@ -1,8 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "node": true
+    "es2021": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -10,13 +9,21 @@
     "sourceType": "module"
   },
   "rules": {
-    "quote-props": [
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
       "error",
       "always"
-    ],
-    "jsx-quotes": [
-      "error",
-      "prefer-double"
     ]
   }
 }
